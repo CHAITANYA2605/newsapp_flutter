@@ -1,4 +1,4 @@
-// https://newsapi.org/v2/top-headlines?sources=google-news-in&apiKey=9bb7bf6152d147ad8ba14cd0e7452f2f
+
 import 'dart:convert';
 import 'dart:math';
 import 'package:http/http.dart';
@@ -40,7 +40,7 @@ class FetchNews {
     var sourceID = sourcesId[_random.nextInt(sourcesId.length)];
 
     Response response = await get(Uri.parse(
-        "https://newsapi.org/v2/top-headlines?sources=$sourceID&apiKey=8d453ae876f44ab3b5104a48366db19a"));
+        "https://newsapi.org/v2/top-headlines?sources=$sourceID&apiKey=yourapi"));
 
     Map body_data = jsonDecode(response.body);
     List articles = body_data["articles"];
