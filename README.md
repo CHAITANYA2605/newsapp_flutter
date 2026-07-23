@@ -1,45 +1,48 @@
-# newsapp_latest
+# Flutter News App
 
-A Flutter application delivering personalized news with secure login.
+A cross-platform Flutter application for browsing news with Firebase-backed
+phone authentication and a mobile-first interface.
 
-This project provides a news app built with Flutter that allows users to access the latest news articles from various sources. Firebase Phone Authentication ensures secure user login and access to personalized news feeds based on user preferences or location.
+## Technology
 
-## Key Features
-Secure Login: Users register and log in using their phone numbers for added security. Firebase Phone Authentication verifies users through a secure code sent to their phones.
-Personalized News Feed: The app tailors news content to user interests or preferences and suggests relevant articles based on user history.
-News API Integration: Fetches news articles from multiple sources using a specified News API. Displays headlines, summaries, and images in a user-friendly format. Allows users to save articles for offline reading.
-Offline Functionality: Users can view cached news articles even without an internet connection.
-## Technologies
-Frontend: Flutter (for cross-platform development)
-Backend: Firebase (for authentication, database, and cloud functions)
-News API: News Api
-State Management: Provider
-Project Structure
-news_app
-├── lib
-│   ├── main.dart
-│   ├── components
-│   │   ├── LoginScreen.dart
-│   │   ├── NewsFeed.dart
-│   │   ├── ArticleDetails.dart
-│   │   └── ...
-│   ├── screens
-│   │   ├── HomeScreen.dart
-│   │   ├── SettingsScreen.dart
-│   │   └── ...
-│   ├── services
-│   │   ├── firebase.dart
-│   │   ├── newsApi.dart
-│   │   └── ...
-│   ├── assets
-│   │   ├── images (Placeholders for login screen, news feed, and article details)
-│   │   └── ...
-│   └── ...
-├── pubspec.yaml
+- Flutter and Dart
+- Firebase Core, Authentication, Firestore, and Storage
+- Provider for application state
+- HTTP for remote content
+- Shared Preferences for local persistence
 
+## Run locally
 
-## Note:
+```bash
+git clone https://github.com/CHAITANYA2605/newsapp_flutter.git
+cd newsapp_flutter
+flutter pub get
+flutter run
+```
 
-Replace [Specify the API used for fetching news content] with the actual API you're using.
+## Configuration
 
+1. Create or select a Firebase project.
+2. Register the platforms you plan to run.
+3. Generate Firebase configuration with FlutterFire.
+4. Enable phone authentication and any Firebase products used by the app.
+5. Configure the news-data endpoint or API key expected by the source.
 
+Restrict client API keys to the intended apps and APIs. Do not commit server
+credentials.
+
+## Quality checks
+
+```bash
+flutter analyze
+flutter test
+```
+
+## Platforms
+
+The repository includes Flutter runners for Android, iOS, web, macOS, Linux,
+and Windows. Firebase and plugin capabilities can differ by target.
+
+## License
+
+See [LICENSE](LICENSE).
